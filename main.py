@@ -86,7 +86,7 @@ while run == True:
     
     for event in pygame.event.get():
         
-        # para cerrar el juego
+        # para cerrar el juego9000
         if event.type == pygame.QUIT:
             run = False
             
