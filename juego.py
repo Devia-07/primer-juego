@@ -1,7 +1,18 @@
 import random
 import math
 
+
 lista = ["Funcion Lineal", "Funcion Cuadratica", "Funcion Parte Entera", "Funcion Valor Absoluto", "Funcion Inversa"]
+def funciones():
+    
+    ecuaciones_cuadraticas = [
+        ("x**2 - 4*x + 4 ", [2, 2, 0],[2,0],["R","y>=0"]),
+        ("2*x**2 - 3*x + 1 ", [0.5, 1, 1],[0.75, -0.125],["R","y>=-0.125"]),
+        ("3*x**2 + 6*x + 3 ", [-1, -1, 3],[-1, 0],["R","y>=0"]),
+        ("x**2 + 5*x + 6 ", [-3, -2, 6],[-2.5,-0.25],["R","y>=-0.25"]),
+        ("4*x**2 - 4*x + 1 ", [0.5, 0.5, 1],[0.5, 0],["R","y>=0"]),
+    ]
+    return ecuaciones_cuadraticas
 
 def random_f(): 
     funcion_aleatoria = random.choice(lista)
@@ -30,6 +41,7 @@ def lineal(m, b):
     return f"¡Rapido analiza la siguiente funcion {m}x {operador} {b}: {pregunta}"
 
 def cuadratica():
+    global ecuaciones_cuadraticas
     ecuaciones_cuadraticas = [
         ("x**2 - 4*x + 4 ", [2, 2, 0],[2,0],["R","y>=0"]),
         ("2*x**2 - 3*x + 1 ", [0.5, 1, 1],[0.75, -0.125],["R","y>=-0.125"]),
