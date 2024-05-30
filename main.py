@@ -1,8 +1,11 @@
 import pygame
 import constantes 
 from personajes import Personaje
+import juego
 import os
-
+import sys
+import random
+from time import sleep
 
 # funciones:
 
@@ -92,6 +95,11 @@ mover_izquierda = False
 # con el frame rate
     
 reloj = pygame.time.Clock()
+fuente = pygame.font.Font(None, 50)
+lista_texto = juego.lista
+texto_1 = random.choice(lista_texto)
+        
+texto = fuente.render(texto_1, True, (255, 255, 255))
 
 
 # para que la ventana no se cierre
@@ -99,11 +107,20 @@ reloj = pygame.time.Clock()
 run = True
 while run == True:
     
+
+    
+    
     # que vaya a 60 fps
     reloj.tick(constantes.fps)
     
     # pinta el fondo de la ventana
-    ventana.fill(constantes.color_bg)  
+    ventana.fill(constantes.color_bg) 
+    
+    # texto 
+    
+   
+    ventana.blit(texto, (500, 100))
+
     
     # calcular el movimiento del jugador
     delta_X = 0
