@@ -72,7 +72,7 @@ jugador_imagen = pygame.image.load("assets//imagenes//characters//player//1 imag
 jugador_imagen = escalar_imagen(jugador_imagen, constantes.escala_personaje)
 
 #craer un jugador de la clase personaje
-jugador = Personaje(100, 100, animaciones)
+jugador = Personaje(200, 340, animaciones)
 
 #craer un enemigo de la clase personaje
 dragon = Personaje(900,300, animaciones_enemigos[0])
@@ -95,11 +95,13 @@ mover_izquierda = False
 # con el frame rate
     
 reloj = pygame.time.Clock()
+
+# texto en la ventana
+
 fuente = pygame.font.Font(None, 50)
-lista_texto = juego.lista
-texto_1 = random.choice(lista_texto)
+lista_texto = juego.random_f()
         
-texto = fuente.render(texto_1, True, (255, 255, 255))
+texto = fuente.render(lista_texto, True, (255, 255, 255))
 
 
 # para que la ventana no se cierre
@@ -116,10 +118,9 @@ while run == True:
     # pinta el fondo de la ventana
     ventana.fill(constantes.color_bg) 
     
-    # texto 
     
    
-    ventana.blit(texto, (500, 100))
+    ventana.blit(texto, (200, 200))
 
     
     # calcular el movimiento del jugador
